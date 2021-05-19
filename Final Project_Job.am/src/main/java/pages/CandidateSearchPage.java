@@ -12,7 +12,7 @@ public class CandidateSearchPage {
 
     private final WebDriver driver;
     private By searchField = By.name("q");
-    private By searchButton = By.xpath("/html/body/div[2]/div/div/div[1]/div/form/div/div/button");
+    private By searchButton = By.xpath("/html/body/div[2]/div/div/div[1]/div/form/div/div/button/span");
     //private By result = By.className("d-table-cell");
 
 
