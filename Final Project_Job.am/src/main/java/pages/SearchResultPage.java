@@ -10,7 +10,7 @@ public class SearchResultPage {
     private static WebDriver driver;
     private By searchField = By.name("q");
     private By searchButton = By.xpath("/html/body/div[2]/form/div[1]/div/div[2]/div[1]/div/div/button");
-    private By errorMsg = By.xpath("/html/body/div[2]/form/div[2]/div[2]/ulclass=\"list-unstyled\"");
+    private static By errorMsg = By.xpath("/html/body/div[2]/form/div[2]/div[2]/ulclass=\"list-unstyled\"");
     private By location = By.className("text-right d-table-row wordBreak fontSize13");
 
     public SearchResultPage(WebDriver driver) {
@@ -21,15 +21,18 @@ public class SearchResultPage {
         driver.findElement(searchField).sendKeys(keyword);
     }
     public void clickSearch(){
+
         driver.findElement(searchButton).click();
     }
-    public static void findElements() {
+    public static WebElement findElements() {
         List<WebElement> results = driver.findElements(By.className("text-dark font-weight-bold wordBreak jttl SpanSize"));
         for (WebElement result : results) {
             System.out.println("Paragraph text:" + result.getText());
         }
+        return (WebElement) results;
     }
-    public void Errormessage(){
+    public static void Errormessage(){
+
         driver.findElement(errorMsg).getText();
     }
 
