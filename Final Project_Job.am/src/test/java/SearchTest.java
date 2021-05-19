@@ -15,8 +15,8 @@ public class SearchTest extends BaseTest {
         JobPage JobPage = HomePage.clickJobButton();
         JobPage.setSearchField("developer");
         JobPage.clickSearch();
-       // findElements();
-        //Assert.assertEquals(findElements().result,"developer");
+
+        //Assert.assertEquals(findElements(),"developer");
     }
 
     @Test
@@ -25,6 +25,7 @@ public class SearchTest extends BaseTest {
         JobPage.setSearchField("bb");
         JobPage.clickSearch();
        // Assert.assertEquals();
+        SearchResultPage.Errormessage();
     }
 
 
